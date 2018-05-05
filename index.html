@@ -24,14 +24,14 @@
 		<h3>1. Personal information</h3>
 		<hr />
 		
-		<input class="input-three-quarters" type="text" name="full-name" placeholder="Full name *" value="" />
-		<input class="input-quarter" type="text" name="phone" placeholder="Phone *" value="" />
-		<input class="input-three-quarters" type="text" name="email" placeholder="Email *" value="" />
-		<input class="input-three-quarters" type="text" name="email-bis" placeholder="Re-enter email *" value="" />
-		<textarea class="input-full notes" name="address" placeholder="Address *" value="" /></textarea>
-		<input class="input-quarter" type="text" name="city" placeholder="City *" value="" />
+		<input class="input-three-quarters" type="text" name="full-name" placeholder="Full name *" required value="" minlength="5" maxlength="30"/>
+		<input class="input-quarter" type="number" name="phone" placeholder="Phone *" required value="" minlength="5" maxlength="12" />
+		<input class="input-three-quarters" type="email" name="email" placeholder="Email *" required value="" minlength="5" maxlength="20" />
+		<input class="input-three-quarters" type="email" name="email-bis" placeholder="Re-enter email *" required value="" minlength="5" maxlength="20" />
+		<textarea class="input-full notes" name="address" placeholder="Address *" minlength="5" required value="" /></textarea>
+		<input class="input-quarter" type="text" name="city" placeholder="City *" minlength="2" value="" required/>
 		<input class="input-quarter" type="text" name="state" placeholder="State" value="" />
-		<input class="input-quarter" type="text" name="country-region" placeholder="Country/Region *" value="" />
+		<input class="input-quarter" type="text" name="country-region" placeholder="Country/Region *" required value="" />
 		<input class="input-quarter" type="text" name="zip-postal-code" placeholder="Zip/Postal code" value="" />
 		<input class="input-full" type="text" name="how-did-you-hear-about-us" placeholder="How did you hear about us" value="" />
 
@@ -46,21 +46,21 @@
 		
 		<div class="radio-block">
 					
-					<input type="radio" name="discipline" id="design-research" value="" />
+					<input type="radio" name="discipline" id="design-research" value="" required />
 
 		<label for="design-research">Design Research</label>
 		
-					<input type="radio" name="discipline" id="visual-design" value="" />
+					<input type="radio" name="discipline" id="visual-design" value="" required/>
 
 		
 		<label for="visual-design">Visual Design</label>
 		
-					<input type="radio" name="discipline" id="ux-design" value="" />
+					<input type="radio" name="discipline" id="ux-design" value="" required/>
 
 		
 		<label for="ux-design">UX Design</label>
 		
-					<input type="radio" name="discipline" id="front-end-dev" value="" />
+					<input type="radio" name="discipline" id="front-end-dev" value="" required/>
 
 		
 		<label for="front-end-dev">Front-end Dev</label>
@@ -77,7 +77,7 @@
 		<input type="checkbox" name="visual-design" value="" />
 		<label for="">UX Design</label>
 		<input type="checkbox" name="ux-design" value="" />
-		<label for="">Front-end DevFelopment</label>
+		<label for="">Front-end Development</label>
 		<input type="checkbox" name="front-end-development" value="" />
 		</div>
 		</div>
@@ -101,7 +101,7 @@
 		<label for="">Dublin, Ireland</label>
 		<input type="checkbox" name="dublin-ireland" value="" />
 		<label for="">Hursley, United Kingdom</label>
-		<input type="checkbox" name="hursley-united-kingdom<" value="" />
+		<input type="checkbox" name="hursley-united-kingdom" value="" />
 		<label for="">Boebingen, Germany</label>
 		<input type="checkbox" name="boebingen-germany" value="" />
 		<label for="">Somewhere else</label>
@@ -120,7 +120,7 @@
 		</h4>
 		
 		
-		<input class="input-full" type="text" name="portfolio-link" placeholder="Portfolio link *" value="" />
+		<input class="input-full" type="text" name="portfolio-link" placeholder="Portfolio link *" value="" minlength="5" required/>
 		
 		<textarea placeholder="Anything else (another link, availability, etc.)?"></textarea>
 		

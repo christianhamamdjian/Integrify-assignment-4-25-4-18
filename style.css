@@ -62,7 +62,6 @@ button:hover {
 label {
 	font-size: .9em;
 	color: #dfdfdf;
-	border-bottom: 1px solid #4e545e;
 	float: left;
 	margin-left: 40px;
 	width: 100%;
@@ -71,19 +70,41 @@ label {
 	width: 100%;
 }
 .input-quarter {
-	width: 21%;
+	width: 20%;
 	margin-right: 20px;
 	margin-left: 0px;
 }
 .input-three-quarters {
-	width: 72%;
+	width: 71%;
 	margin-right: 20px;
 }
-placeholder {
+::placeholder {
 	font-size: 1em;
 	color: #dfdfdf;
 }
-input {
+input[type=text] {
+	font-size: .9em;
+	background-color: #454d57;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid #90979e;
+	margin-top: 40px;
+	color: #dfdfdf;
+	outline: none;
+}
+input[type=number] {
+	font-size: .9em;
+	background-color: #454d57;
+	border-top: 1px solid transparent;
+	border-right: 1px solid transparent;
+	border-left: 1px solid transparent;
+	border-bottom: 1px solid #90979e;
+	margin-top: 40px;
+	color: #dfdfdf;
+	outline: none;
+}
+input[type=email] {
 	font-size: .9em;
 	background-color: #454d57;
 	border-top: 1px solid transparent;
@@ -122,7 +143,7 @@ textarea {
 	float: right;
 }
 input[type=checkbox] {
-	transform: scale(1);
+/*	transform: scale(1);*/
 	float: left;
 	color: white;
 	visibility: hidden;
@@ -189,4 +210,22 @@ input[type=radio]:checked + label {
 .button:hover {
 	background-color: #1eb4ef;
 	border: 1px solid transparent;
+}
+input:valid {
+    border: 2px solid blue;
+}
+input:invalid {
+    border: 2px solid red;
+}
+textarea:valid {
+    border: 2px solid blue;
+}
+textarea:invalid {
+    border: 2px solid red;
+}
+.radio-block:valid {
+    border: 2px solid blue;
+}
+.radio-block:invalid {
+    border: 2px solid red;
 }
