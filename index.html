@@ -7,10 +7,12 @@
   <meta name="keywords" content="">
   <title>Web form</title>
   <link rel="stylesheet" href="style.css">
+
+
 </head>
 	<body>
 	<div class="form">
-	<form method="post" action="">
+	<form id = "input-form" method="post" action="" onsubmit="return validate(this)">
 		
 		<div class="header">
 		
@@ -24,16 +26,32 @@
 		<h3>1. Personal information</h3>
 		<hr />
 		
-		<input class="input-three-quarters" type="text" name="full-name" placeholder="Full name *" required value="" minlength="5" maxlength="30"/>
-		<input class="input-quarter" type="number" name="phone" placeholder="Phone *" required value="" minlength="5" maxlength="12" />
-		<input class="input-three-quarters" type="email" name="email" placeholder="Email *" required value="" minlength="5" maxlength="20" />
-		<input class="input-three-quarters" type="email" name="email-bis" placeholder="Re-enter email *" required value="" minlength="5" maxlength="20" />
-		<textarea class="input-full notes" name="address" placeholder="Address *" minlength="5" required value="" /></textarea>
-		<input class="input-quarter" type="text" name="city" placeholder="City *" minlength="2" value="" required/>
-		<input class="input-quarter" type="text" name="state" placeholder="State" value="" />
-		<input class="input-quarter" type="text" name="country-region" placeholder="Country/Region *" required value="" />
-		<input class="input-quarter" type="text" name="zip-postal-code" placeholder="Zip/Postal code" value="" />
-		<input class="input-full" type="text" name="how-did-you-hear-about-us" placeholder="How did you hear about us" value="" />
+		<input class="input-three-quarters name" type="text" id="full-name" name="full-name" placeholder="Full name *" /> 
+		<span class="message" id="message-name"></span>
+		
+		<input class="input-quarter phone" type="text" id="phone" name="phone" placeholder="Phone *" />
+		<span class="message" id="message-phone"></span>
+
+		<input class="input-three-quarters email" type="text" id="email1" name="email" placeholder="Email *" />
+		<span class="message" id="message-email1"></span>
+		
+		<input class="input-three-quarters email-bis" type="text" id="email2" name="email-bis" placeholder="Re-enter email *" />
+		<span class="message" id="message-email2"></span>
+		
+		<textarea class="input-full notes address" id="address" name="address" placeholder="Address *"/></textarea>
+		<span class="message" id="message-address"></span>
+		
+		<input class="input-quarter city" type="text" id="city" name="city" placeholder="City *" />
+		<span class="message" id="message-city"></span>
+		
+		<input class="input-quarter state" type="text" name="state" placeholder="State" />
+		
+		<input class="input-quarter country" type="text" id="country" name="country" placeholder="Country/Region *" />
+		<span class="message" id="message-country"></span>
+		
+		<input class="input-quarter zip" type="text" name="zip-postal-code" placeholder="Zip/Postal code" />
+		
+		<input class="input-full" type="text" name="how-did-you-hear-about-us" placeholder="How did you hear about us" />
 
 		</div>
 
@@ -46,23 +64,22 @@
 		
 		<div class="radio-block">
 					
-					<input type="radio" name="discipline" id="design-research" value="" required />
+					<input type="radio" name="discipline" id="design-research" value=""  />
 
 		<label for="design-research">Design Research</label>
 		
-					<input type="radio" name="discipline" id="visual-design" value="" required/>
+					<input type="radio" name="discipline" id="visual-design" value="" />
 
 		
 		<label for="visual-design">Visual Design</label>
 		
-					<input type="radio" name="discipline" id="ux-design" value="" required/>
+					<input type="radio" name="discipline" id="ux-design" value="" />
 
 		
 		<label for="ux-design">UX Design</label>
 		
-					<input type="radio" name="discipline" id="front-end-dev" value="" required/>
+					<input type="radio" name="discipline" id="front-end-dev" value="" />
 
-		
 		<label for="front-end-dev">Front-end Dev</label>
 		
 		
@@ -86,27 +103,44 @@
 		
 		<h4>Where are you interested in working? *</h4>
 		
-		<p>You must be legally authorized to work without visa sponsorship in the location you choose.</p>
+		<span>You must be legally authorized to work without visa sponsorship in the location you choose.</span>
 		
 
 		<div class="checkboxes-block">
-		<label for="">Austin, Texas</label>
-		<input type="checkbox" name="austin-texas" value="" />
-		<label for="">New York, New York</label>
-		<input type="checkbox" name="new-york-new-york" value="" />
-		<label for="">Toronto, Canada</label>
-		<input type="checkbox" name="toronto-canada" value="" />
-		<label for="">Shanghai, China</label>
-		<input type="checkbox" name="shanghai-china" value="" />
-		<label for="">Dublin, Ireland</label>
-		<input type="checkbox" name="dublin-ireland" value="" />
-		<label for="">Hursley, United Kingdom</label>
-		<input type="checkbox" name="hursley-united-kingdom" value="" />
-		<label for="">Boebingen, Germany</label>
-		<input type="checkbox" name="boebingen-germany" value="" />
-		<label for="">Somewhere else</label>
-		<input type="checkbox" name="somewhere-else" value="" />
-		</div>
+		
+		<label for="a">Austin, Texas</label>
+		
+		<input id="a" class="checkbox" type="checkbox" value="austin-texas" name="option" />
+		
+		<label for="b">New York, New York</label>
+		
+		<input id="b" class="checkbox" type="checkbox" value="new-york-new-york" name="option" />
+		
+		<label for="c">Toronto, Canada</label>
+		
+		<input id="c" class="checkbox" type="checkbox" value="toronto-canada" name="option" />
+		
+		<label for="d">Shanghai, China</label>
+		
+		<input id="d" class="checkbox" type="checkbox" value="shanghai-china" name="option" />
+		
+		<label for="e">Dublin, Ireland</label>
+		
+		<input id="e" class="checkbox" type="checkbox" value="dublin-ireland" name="option" />
+		
+		<label for="f">Hursley, United Kingdom</label>
+		
+		<input id="f" class="checkbox" type="checkbox" value="hursley-united-kingdom" name="option" />
+		
+		<label for="g">Boebingen, Germany</label>
+		
+		<input id="g" class="checkbox" type="checkbox" value="boebingen-germany" name="option" />
+		
+		<label for="h">Somewhere else</label>
+		
+		<input id="h" class="checkbox" type="checkbox" value="somewhere-else" name="option" />
+		
+	</div>
 		</div>
 		<div class="clearfix"></div>
 		</div>
@@ -120,7 +154,8 @@
 		</h4>
 		
 		
-		<input class="input-full" type="text" name="portfolio-link" placeholder="Portfolio link *" value="" minlength="5" required/>
+		<input class="input-full portfolioLink" type="text" id="portfolio" name="portfolio-link" placeholder="Portfolio link *" value="" minlength="5" /><br>
+		<span class="message" id="message-portfolio"></span>
 		
 		<textarea placeholder="Anything else (another link, availability, etc.)?"></textarea>
 		
@@ -129,10 +164,11 @@
 		
 		<div class="submit">
 		
-		<button type="submit" title="submit">Submit</button>
-		
+		<button type="submit" title="submit" value="submit">Submit</button>
+
 		</div>
 	</form>
 	</div>
+	<script src="script.js"></script>
 	</body>
 </html>
