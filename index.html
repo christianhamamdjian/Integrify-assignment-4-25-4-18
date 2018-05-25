@@ -7,10 +7,15 @@
   <meta name="keywords" content="">
   <title>Web form</title>
   <link rel="stylesheet" href="style.css">
+  <!-- <script>
+  	const form = document.forms['input-form'];
+	  form.checkValidity();
+	  
+  </script> -->
 </head>
 	<body>
 	<div class="form">
-	<form method="post" action="">
+	<form id = "input-form" method="post" action="">
 		
 		<div class="header">
 		
@@ -24,15 +29,24 @@
 		<h3>1. Personal information</h3>
 		<hr />
 		
-		<input class="input-three-quarters" type="text" name="full-name" placeholder="Full name *" required value="" minlength="5" maxlength="30"/>
-		<input class="input-quarter" type="number" name="phone" placeholder="Phone *" required value="" minlength="5" maxlength="12" />
-		<input class="input-three-quarters" type="email" name="email" placeholder="Email *" required value="" minlength="5" maxlength="20" />
-		<input class="input-three-quarters" type="email" name="email-bis" placeholder="Re-enter email *" required value="" minlength="5" maxlength="20" />
-		<textarea class="input-full notes" name="address" placeholder="Address *" minlength="5" required value="" /></textarea>
-		<input class="input-quarter" type="text" name="city" placeholder="City *" minlength="2" value="" required/>
+		<input class="input-three-quarters" type="text" name="full-name" placeholder="Full name *" required value="" minlength="5" maxlength="30" pattern="^[A-Za-z]{3,20}\s[A-Za-z]{3,20}$" />
+		
+		<input class="input-quarter" type="text" name="phone" placeholder="Phone *" required pattern="^([++])+([\s|\d])+([\d])$" />
+		
+		<input class="input-three-quarters" type="text" name="email" placeholder="Email *" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" />
+		
+		<input class="input-three-quarters" type="text" name="email-bis" placeholder="Re-enter email *" required pattern="^\w+@[a-zA-Z_]+?\.[a-zA-Z]{2,3}$" />
+		
+		<textarea class="input-full notes" name="address" placeholder="Address *" minlength="5" required pattern="\w{3,}" value="" /></textarea>
+		
+		<input class="input-quarter" type="text" name="city" placeholder="City *" minlength="2" value="" required pattern="\w{3,}"/>
+
 		<input class="input-quarter" type="text" name="state" placeholder="State" value="" />
-		<input class="input-quarter" type="text" name="country-region" placeholder="Country/Region *" required value="" />
+		
+		<input class="input-quarter" type="text" name="country-region" placeholder="Country/Region *" required pattern="\w{3,}" value="" />
+		
 		<input class="input-quarter" type="text" name="zip-postal-code" placeholder="Zip/Postal code" value="" />
+		
 		<input class="input-full" type="text" name="how-did-you-hear-about-us" placeholder="How did you hear about us" value="" />
 
 		</div>
@@ -120,7 +134,7 @@
 		</h4>
 		
 		
-		<input class="input-full" type="text" name="portfolio-link" placeholder="Portfolio link *" value="" minlength="5" required/>
+		<input class="input-full" type="text" name="portfolio-link" placeholder="Portfolio link *" value="" minlength="5" required pattern="https?://.+"/>
 		
 		<textarea placeholder="Anything else (another link, availability, etc.)?"></textarea>
 		
